@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jon's Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        var require = { paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs' } };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/loader.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Jon's Learning Platform</div>
+        <div class="nav-items">
+            <button id="themeToggle">🌙</button>
+            <button id="shareBtn">Share</button>
+            <div class="user-profile">👤 Guest</div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="progress-section">
+                <h3>Your Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+                <p class="progress-text">0% Complete</p>
+            </div>
+            <div class="lessons-list">
+                <h3>Lessons</h3>
+                <ul id="lessonsList">
+                    <li class="active">Introduction to Programming</li>
+                    <li>Variables & Data Types</li>
+                    <li>Control Structures</li>
+                    <li>Functions</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="lesson-content">
+                <h2 id="lessonTitle">Introduction to Python</h2>
+                <div class="lesson-text" id="lessonText">
+                    Welcome to your first Python programming lesson! Let's start with a simple example.
+                </div>
+            </div>
+            <div class="code-workspace">
+                <div class="editor-container">
+                    <div id="monaco-editor" style="width:100%; height:100%;"></div>
+                    <div class="editor-controls">
+                        <button id="runCode" class="primary-btn">Run Code ▶</button>
+                        <button id="resetCode" class="secondary-btn">Reset</button>
+                    </div>
+                </div>
+                <div class="output-container">
+                    <h3>Output</h3>
+                    <div id="output" class="output-window"></div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="collaboration-panel">
+            <h3>Live Session</h3>
+            <div class="collaborators">
+                <div class="collaborator active">
+                    <span class="avatar">👤</span>
+                    <span class="name">You</span>
+                </div>
+            </div>
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages"></div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Type a message..." id="messageInput">
+                    <button id="sendMessage">Send</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
